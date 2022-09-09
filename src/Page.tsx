@@ -14,6 +14,7 @@ import urlJoin from 'url-join';
 import { useVideoJS } from "react-hook-videojs";
 import "video.js/dist/video-js.css";
 
+// Room name
 const roomList = [
   'Room A',
   'Room B',
@@ -28,6 +29,7 @@ type VideoPlayerProps = {
   room?: string;
 }
 
+// Modify here
 const URL1 = 'http://jvb2.titech.binaural.me';
 const URL2 = 'http://jvb2.titech.binaural.me';
 // src: 'http://jvb2.titech.binaural.me/hls/stream.m3u8',
@@ -91,6 +93,7 @@ export default function Page() {
               return (
                 <div key={idx}>
                   <ListItem disablePadding
+                    sx={{ textOverflow: 'ellipsis' }}
                   >
                     <ListItemButton
                       onClick={handleToggle(idx)}
@@ -104,7 +107,9 @@ export default function Page() {
                           inputProps={{ 'aria-labelledby': labelId }}
                           />
                       </ListItemIcon>
-                      <ListItemText secondary={value} />
+                      <ListItemText 
+                        secondary={value}
+                        />
                     </ListItemButton>
                   </ListItem>
 
@@ -139,12 +144,14 @@ export default function Page() {
                             display={"flex"}
                             justifyContent={"center"}
                             alignItems="center"
+                            sx={{ textOverflow: 'ellipsis' }}
                           >
                             <h2>{roomName}</h2>
                           </Box>
                         <Divider />
                         <Box
                           sx={{ p: 2 }}>
+                          {/* Uncomment below to deployment version */}
                           {/* <VideoPlayer room={roomName.replace(/\s/g, '')} domain={URL1}/> */}
                           <VideoPlayer />
                         </Box>

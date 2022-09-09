@@ -17,7 +17,7 @@ import Link from "@mui/material/Link";
 
 import { useVideoJS } from "react-hook-videojs";
 import "video.js/dist/video-js.css";
-import RoomList from './RoomList';
+import RoomList from './Page';
 
 import Button from '@mui/material/Button';
 import { Container, createTheme, Divider, PaletteMode, ThemeProvider } from '@mui/material';
@@ -62,7 +62,7 @@ function App() {
           alignItems="left"
           sx={{ paddingX: 2}}
         >
-
+          {/* Modify here to rename title */}
           <h1>VRSJ2022 Hall</h1>
         </Box>
         <Divider />
@@ -79,12 +79,12 @@ function App() {
         <Divider />
         <Typography variant='body2' color="InfoText" align='right'>
           {'© '}
-          <Link color="inherit" href="https://material-ui.com/">
+          {new Date().getFullYear()}
+          {'  '}
+          <Link color="inherit" href="https://github.com/VirgiliaBeatrice/hls-hall">
             Haoyan.Li
           </Link>
-          {' All rights reserved. '}
-          {new Date().getFullYear()}
-          {'.'}
+          {'  All rights reserved.'}
         </Typography>
       </Box>
     </ThemeProvider>
