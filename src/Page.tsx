@@ -30,8 +30,8 @@ type VideoPlayerProps = {
 }
 
 // Modify here
-const URL1 = 'http://jvb2.titech.binaural.me';
-const URL2 = 'http://jvb2.titech.binaural.me';
+const URL = 'http://192.168.50.14';
+// const URL = 'http://192.168.50.15';
 // src: 'http://jvb2.titech.binaural.me/hls/stream.m3u8',
 
 const VideoPlayer: React.FC<VideoPlayerProps> = (prop: VideoPlayerProps) => {
@@ -152,8 +152,8 @@ export default function Page() {
                         <Box
                           sx={{ p: 2 }}>
                           {/* Uncomment below to deployment version */}
-                          {/* <VideoPlayer room={roomName.replace(/\s/g, '')} domain={URL1}/> */}
-                          <VideoPlayer />
+                          <VideoPlayer room={roomName.replace(/\s/g, '').toLowerCase()} domain={URL}/>
+                          {/* <VideoPlayer /> */}
                         </Box>
                       </Paper>
 
